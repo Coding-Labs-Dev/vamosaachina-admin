@@ -4,11 +4,12 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import Login from '~/pages/Login';
+import Admin from '~/pages/Admin';
 
 function Routes({ auth }) {
   return auth.isAuth ? (
     <Switch>
-      <Route path="/" render={() => <h1>Admin Dashboard</h1>} />
+      <Route path="/" component={Admin} />
     </Switch>
   ) : (
     <Login />

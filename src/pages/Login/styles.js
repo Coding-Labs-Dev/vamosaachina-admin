@@ -64,7 +64,6 @@ export const Field = styled.div`
 export const Label = styled.label`
   display: block;
   width: 100%;
-  text-align: center;
   font-family: 'Montserrat', 'sans-serif';
   font-size: 0.6em;
   text-transform: uppercase;
