@@ -1,26 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import styled from 'styled-components';
 
-function App() {
+import AuthActions from '~/store/ducks/auth';
+
+import Loader from './components/Loader';
+
+const MainContainer = styled.section`
+  height: 100%;
+  width: 100%;
+`;
+
+function App({ auth, verifySession, children }) {
+  useEffect(() => {
+    verifySession();
+  }, [verifySession]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MainContainer>{auth.initLoading ? <Loader /> : children}</MainContainer>
   );
 }
 
-export default App;
+App.propTypes = {
+  verifySession: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
+  auth: PropTypes.shape().isRequired,
+};
+
+const mapStateToProps = state => ({
+  auth: state.auth,
+});
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({ ...AuthActions }, dispatch);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);
