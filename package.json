@@ -27,7 +27,8 @@
     "start:debug": "react-app-rewired --inspect start --no-cache --runInBand",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
-    "eject": "react-app-rewired eject"
+    "eject": "react-app-rewired eject",
+    "deploy": "yarn build && aws s3 sync ./build s3://admin.vamosachina.com.br"
   },
   "eslintConfig": {
     "extends": "react-app"
