@@ -109,10 +109,11 @@ function Transactions({ transactions, clients, getTransactions, getClients }) {
           columns={[
             {
               name: 'Data e Hora',
-              selector: 'data',
+              selector: 'date',
               sortable: true,
-              format: innerRow =>
-                moment(innerRow.data).format('DD/MM/YYYY  HH:mm:ss'),
+              format: innerRow => {
+                return moment(innerRow.date).format('DD/MM/YYYY  HH:mm:ss');
+              },
             },
             {
               name: 'Status',

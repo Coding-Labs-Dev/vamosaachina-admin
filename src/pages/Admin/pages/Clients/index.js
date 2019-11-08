@@ -13,7 +13,15 @@ import Table, {
   ExpandedText,
 } from '~/pages/Admin/components/Table';
 
-import { Container, Title, Header, Expanded, Row, Column } from './styles';
+import {
+  Container,
+  Title,
+  Header,
+  Expanded,
+  Row,
+  Column,
+  NoRecords,
+} from './styles';
 
 function Clients({ transactions, clients, getTransactions, getClients }) {
   useEffect(() => {
@@ -135,6 +143,7 @@ function Clients({ transactions, clients, getTransactions, getClients }) {
               columns={columns}
               data={clients.clients}
               defaultSortField="name"
+              noDataComponent={<NoRecords>Sem informações</NoRecords>}
               expandableRowsComponent={<ExpandedComponent />}
               expandOnRowClicked
               expandableRows
