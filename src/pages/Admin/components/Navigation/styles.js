@@ -34,9 +34,10 @@ export const NavLink = styled(Link)`
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  transition: 0.25s ease;
   &.active,
   &:hover {
-    color: ${({ theme }) => theme.primmary};
+    color: ${({ theme }) => theme.primary};
     div {
       opacity: 1;
     }
@@ -47,7 +48,7 @@ export const ActiveBar = styled.div`
   width: 5px;
   height: 100%;
   margin-right: 25px;
-  background-color: ${({ theme }) => theme.primmary};
+  background-color: ${({ theme }) => theme.primary};
   opacity: 0;
   transition: 0.25s ease;
 `;

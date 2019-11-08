@@ -6917,7 +6917,7 @@ mem@^4.0.0:
     mimic-fn "^2.0.0"
     p-is-promise "^2.0.0"
 
-memoize-one@^5.0.0:
+memoize-one@^5.0.0, memoize-one@^5.1.1:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/memoize-one/-/memoize-one-5.1.1.tgz#047b6e3199b508eaec03504de71229b8eb1d75c0"
   integrity sha512-HKeeBpWvqiVJD57ZUAsJNm71eHTykffzcLZVYWiVfQeI1rJtuEaS7hQiEpWfVVk18donPwJEcFKIkCmPJNOhHA==
@@ -7157,6 +7157,11 @@ mkdirp@0.5.1, mkdirp@0.5.x, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdi
   integrity sha1-MAV0OOrGz3+MR2fzhkjWaX11yQM=
   dependencies:
     minimist "0.0.8"
+
+moment@^2.24.0:
+  version "2.24.0"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.24.0.tgz#0d055d53f5052aa653c9f6eb68bb5d12bf5c2b5b"
+  integrity sha512-bV7f+6l2QigeBBZSM/6yTNq4P2fNpSWj/0e7jQcy87A8e7o2nAfP/34/2ky5Vw4B9S446EtIhodAzkFCcR4dQg==
 
 move-concurrently@^1.0.1:
   version "1.0.1"
@@ -8996,6 +9001,15 @@ react-app-rewired@^2.1.5:
   integrity sha512-Gr8KfCeL9/PTQs8Vvxc7v8wQ9vCFMnYPhcAkrMlzkLiMFXS+BgSwm11MoERjZm7dpA2WjTi+Pvbu/w7rujAV+A==
   dependencies:
     semver "^5.6.0"
+
+react-data-table-component@^3.7.0:
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/react-data-table-component/-/react-data-table-component-3.7.0.tgz#a57ebd7a4715f80e81abdc5b7fdf5451768c66d2"
+  integrity sha512-zda0FbZxredi+urohFYo19af8ByBMYOYPKVsfktLXg3ZVqk96iRzw85YLj1ytTrfpVf9175E+Gu3DBs+ra3Eaw==
+  dependencies:
+    lodash "^4.17.15"
+    memoize-one "^5.1.1"
+    shortid "^2.2.15"
 
 react-dev-utils@^9.1.0:
   version "9.1.0"

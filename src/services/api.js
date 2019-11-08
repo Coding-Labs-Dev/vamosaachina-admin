@@ -129,7 +129,25 @@ class API {
     document.cookie = 'accessToken= ; expires = Thu, 01 Jan 1970 00:00:00 GMT';
     document.cookie = 'refreshToken= ; expires = Thu, 01 Jan 1970 00:00:00 GMT';
   }
+
+  // ! Transactions
+  async getTransactions(id) {
+    const endpoint = `/admin/transactions${id ? `/${id}` : ''}`;
+    const response = this.api().get(endpoint, {
+      withCredentials: true,
+    });
+    return response;
+  }
+
+  // ! Clients
+  async getClients(id) {
+    const endpoint = `/admin/clients${id ? `/${id}` : ''}`;
+    const response = this.api().get(endpoint, {
+      withCredentials: true,
+    });
+    return response;
+  }
 }
-// Forgot Password
+
 const api = new API();
 export default api;

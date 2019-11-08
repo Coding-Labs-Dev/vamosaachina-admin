@@ -7,9 +7,11 @@ const theme = {
     alert: '#d63031',
     warning: '#fdcb6e',
     success: '#00b894',
-    primmary: '#0984e3',
+    primary: '#0984e3',
     secondary: '#74b9ff',
     light: '#ffffff',
+    shadow: 'rgba(178, 190, 195,1.0)',
+    rowHover: 'rgba(0,0,0,0.08)',
   },
 };
 
