@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import moment from 'moment';
+import shortid from 'shortid';
 
 import TransactionsActions from '~/store/ducks/Admin/transactions';
 import ClientsActions from '~/store/ducks/Admin/clients';
@@ -106,7 +107,9 @@ function Clients({ transactions, clients, getTransactions, getClients }) {
         name: 'Transações atreladas',
         selector: 'transactions',
         cell: row =>
-          row.transactions.map(transaction => <div>{transaction}</div>),
+          row.transactions.map(transaction => (
+            <div key={shortid.generate()}>{transaction}</div>
+          )),
       },
     ];
     return (
@@ -116,7 +119,7 @@ function Clients({ transactions, clients, getTransactions, getClients }) {
           {headers.map(({ name, selector, cell }) => {
             const value = data[selector];
             return (
-              <Row>
+              <Row key={shortid.generate()}>
                 <Column header>{name}</Column>
                 <Column>
                   <ExpandedText>{cell ? cell(data) : value}</ExpandedText>

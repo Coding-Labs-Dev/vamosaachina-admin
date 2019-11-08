@@ -1,6 +1,4 @@
-import styled, { css } from 'styled-components';
-
-import background from '~/images/background.jpg';
+import styled from 'styled-components';
 
 export const Container = styled.section`
   width: 100%;

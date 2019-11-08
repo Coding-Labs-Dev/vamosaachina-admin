@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import moment from 'moment';
 
 import TransactionsActions from '~/store/ducks/Admin/transactions';
 import ClientsActions from '~/store/ducks/Admin/clients';
@@ -22,7 +21,7 @@ function Dashboard({ transactions, clients, getTransactions, getClients }) {
   useEffect(() => {
     getTransactions();
     getClients();
-  }, [getTransactions]);
+  }, [getTransactions, getClients]);
 
   return (
     <>
