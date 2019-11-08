@@ -39,7 +39,8 @@ class API {
               `${process.env.REACT_APP_API}/session/refresh`
           ) {
             // Invalid Refresh token
-            this.signOut();
+            // originalRequest.retry = true;
+            // this.signOut();
             const err = { code: 401, message: 'Sessão expirada' };
             return Promise.reject(err);
           }
@@ -124,10 +125,12 @@ class API {
   }
 
   // // Sign Out
-  signOut() {
-    // TODO
-    document.cookie = 'accessToken= ; expires = Thu, 01 Jan 1970 00:00:00 GMT';
-    document.cookie = 'refreshToken= ; expires = Thu, 01 Jan 1970 00:00:00 GMT';
+  async signOut() {
+    localStorage.clear('verificationToken');
+    sessionStorage.clear('verificationToken');
+    await this.api().get('/session/signout');
+    this.updateConfig();
+    return true;
   }
 
   // ! Transactions

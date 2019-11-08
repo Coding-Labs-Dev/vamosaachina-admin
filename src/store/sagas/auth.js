@@ -57,6 +57,6 @@ export function* verifySession() {
 }
 
 export function* signOut() {
-  const response = yield call([api, api.signOut]);
-  yield put(AuthActions.signOut({ ...response }));
+  yield call([api, api.signOut]);
+  yield put(AuthActions.response({ isAuth: false }));
 }

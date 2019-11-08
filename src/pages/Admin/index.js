@@ -1,18 +1,23 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 import { Container, Nav, Content, AppBar, Main } from './styles';
 
 import Navigation from './components/Navigation';
+import Appbar from './components/Appbar';
 import Routes from './routes';
 
-export default function Admin() {
+function Admin({ navigation }) {
   return (
     <Container>
-      <Nav>
+      <Nav open={navigation.open}>
         <Navigation />
       </Nav>
       <Content>
-        <AppBar />
+        <AppBar>
+          <Appbar />
+        </AppBar>
         <Main>
           <Routes />
         </Main>
@@ -20,3 +25,9 @@ export default function Admin() {
     </Container>
   );
 }
+
+const mapStateToProps = state => ({
+  navigation: state.navigation,
+});
+
+export default connect(mapStateToProps)(Admin);
